@@ -1,6 +1,8 @@
 import uvicorn
 from fastapi import FastAPI
+from database import SessionLocal, engine, Base
 
+Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 if __name__ == '__main__':
